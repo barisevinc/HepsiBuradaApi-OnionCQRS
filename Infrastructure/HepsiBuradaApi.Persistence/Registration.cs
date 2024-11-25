@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using HepsiBuradaApi.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
+using HepsiBuradaApi.Application.Interfaces.Repositories;
+using HepsiBuradaApi.Persistence.Repositories;
 
 namespace HepsiBuradaApi.Persistence
 {
@@ -16,6 +18,8 @@ namespace HepsiBuradaApi.Persistence
         {
             services.AddDbContext<AppDbContext>(opt => 
             opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
         }
     }
 }
