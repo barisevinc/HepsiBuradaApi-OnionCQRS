@@ -9,6 +9,8 @@ using HepsiBuradaApi.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using HepsiBuradaApi.Application.Interfaces.Repositories;
 using HepsiBuradaApi.Persistence.Repositories;
+using HepsiBuradaApi.Application.UnitOfWorks;
+using HepsiBuradaApi.Persistence.UnitOfWorks;
 
 namespace HepsiBuradaApi.Persistence
 {
@@ -21,6 +23,10 @@ namespace HepsiBuradaApi.Persistence
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
             services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
+
+
+            services.AddScoped<IUnitOfWork, UnitOfwork>();
+            
         }
     }
 }
