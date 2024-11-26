@@ -15,12 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\Infrastructure\HepsiBuradaApi.Infrastructure\HepsiBuradaApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\HepsiBuradaApi.Persistence\HepsiBuradaApi.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\HepsiBuradaApi.Infrastructure\HepsiBuradaApi.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\HepsiBuradaApi.Persistence\HepsiBuradaApi.Persistence.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
