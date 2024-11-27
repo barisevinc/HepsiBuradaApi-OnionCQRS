@@ -15,12 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\HepsiBuradaApi.Mapper\HepsiBuradaApi.Mapper.csproj" />
     <ProjectReference Include="..\..\Infrastructure\HepsiBuradaApi.Infrastructure\HepsiBuradaApi.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\HepsiBuradaApi.Persistence\HepsiBuradaApi.Persistence.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

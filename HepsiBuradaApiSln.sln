@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3BB0CFDD-2B95-4101-BD6E-B583E101C028}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HepsiBuradaApi.Persistence", "Infrastructure\HepsiBuradaApi.Persistence\HepsiBuradaApi.Persistence.csproj", "{C2E345B6-E298-4ECF-80C4-B8DFC9F95038}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HepsiBuradaApi.Api", "Presentation\HepsiBuradaApi.Api\HepsiBuradaApi.Api.csproj", "{D63F1DCE-81A2-4A5B-ACDE-07515BF1673C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HepsiBuradaApi.Mapper", "HepsiBuradaApi.Mapper\HepsiBuradaApi.Mapper.csproj", "{D9256F71-21BC-42DB-9002-048A71C98D7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D63F1DCE-81A2-4A5B-ACDE-07515BF1673C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D63F1DCE-81A2-4A5B-ACDE-07515BF1673C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D63F1DCE-81A2-4A5B-ACDE-07515BF1673C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9256F71-21BC-42DB-9002-048A71C98D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9256F71-21BC-42DB-9002-048A71C98D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9256F71-21BC-42DB-9002-048A71C98D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9256F71-21BC-42DB-9002-048A71C98D7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +61,6 @@ Global
 		{34101084-A6A9-4D47-BC92-36AC7794BAE6} = {84EF90ED-82EE-40B4-A8E1-DB9E3F51CC3F}
 		{C2E345B6-E298-4ECF-80C4-B8DFC9F95038} = {84EF90ED-82EE-40B4-A8E1-DB9E3F51CC3F}
 		{D63F1DCE-81A2-4A5B-ACDE-07515BF1673C} = {42EAF7A9-EC31-4E19-822D-9FDC184F112E}
+		{D9256F71-21BC-42DB-9002-048A71C98D7C} = {3BB0CFDD-2B95-4101-BD6E-B583E101C028}
 	EndGlobalSection
 EndGlobal
