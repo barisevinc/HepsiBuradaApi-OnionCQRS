@@ -1,4 +1,6 @@
 ﻿using HepsiBuradaApi.Application.Features.Products.Command.CreateProduct;
+using HepsiBuradaApi.Application.Features.Products.Command.DeleteProduct;
+using HepsiBuradaApi.Application.Features.Products.Command.UpdateProduct;
 using HepsiBuradaApi.Application.Features.Products.Queries.GeAllProducts;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -29,6 +31,20 @@ namespace HepsiBuradaApi.Api.Controllers
         {
             await _mediator.Send(request);
 
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteProduct(DeleteProductCommandRequest request)
+        {
+            await _mediator.Send(request);
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
+        {
+            await _mediator.Send(request);
             return Ok();
         }
 
