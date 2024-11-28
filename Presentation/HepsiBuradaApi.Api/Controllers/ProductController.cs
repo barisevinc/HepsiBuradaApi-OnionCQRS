@@ -1,4 +1,5 @@
-﻿using HepsiBuradaApi.Application.Features.Products.Queries.GeAllProducts;
+﻿using HepsiBuradaApi.Application.Features.Products.Command.CreateProduct;
+using HepsiBuradaApi.Application.Features.Products.Queries.GeAllProducts;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,5 +24,13 @@ namespace HepsiBuradaApi.Api.Controllers
 
             return Ok(response);
         }
+        [HttpPost]
+        public async Task<IActionResult> CreateProduct(CreateProductCommandRequest request)
+        {
+            await _mediator.Send(request);
+
+            return Ok();
+        }
+
     }
 }
