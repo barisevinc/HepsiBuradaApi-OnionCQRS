@@ -1,6 +1,7 @@
 using HepsiBuradaApi.Persistence;
 using HepsiBuradaApi.Application;
 using HepsiBuradaApi.Mapper;
+using HepsiBuradaApi.Application.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.ConfigureExceptionHandling();
 
 app.UseAuthorization();
 
