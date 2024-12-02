@@ -1,7 +1,12 @@
-﻿using HepsiBuradaApi.Application.Exceptions;
+﻿using FluentValidation;
+using HepsiBuradaApi.Application.Behaviors;
+using HepsiBuradaApi.Application.Exceptions;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Buffers;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -18,6 +23,12 @@ namespace HepsiBuradaApi.Application
             services.AddTransient<ExceptionMiddleware>();
 
             services.AddMediatR(cfg=> cfg.RegisterServicesFromAssembly(assembly));
+
+            services.AddValidatorsFromAssembly(assembly);
+
+            ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
+
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehavior<,>));
         }
     }
 }
