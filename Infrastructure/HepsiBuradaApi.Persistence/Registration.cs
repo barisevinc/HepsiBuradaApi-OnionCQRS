@@ -11,6 +11,7 @@ using HepsiBuradaApi.Application.Interfaces.Repositories;
 using HepsiBuradaApi.Persistence.Repositories;
 using HepsiBuradaApi.Application.UnitOfWorks;
 using HepsiBuradaApi.Persistence.UnitOfWorks;
+using HepsiBuradaApi.Domain.Entities;
 
 namespace HepsiBuradaApi.Persistence
 {
@@ -26,7 +27,17 @@ namespace HepsiBuradaApi.Persistence
 
 
             services.AddScoped<IUnitOfWork, UnitOfwork>();
-            
+
+            services.AddIdentityCore<User>(opt =>
+            {
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequiredLength = 2;
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireDigit = false;
+                opt.SignIn.RequireConfirmedEmail = false;
+
+            }).AddRoles<Role>().AddEntityFrameworkStores<AppDbContext>();
         }
     }
 }
