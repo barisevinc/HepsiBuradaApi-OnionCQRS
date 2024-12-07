@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using HepsiBuradaApi.Application.Bases;
-using HepsiBuradaApi.Application.Behaviors;
+using HepsiBuradaApi.Application.Beheviors;
 using HepsiBuradaApi.Application.Exceptions;
 using HepsiBuradaApi.Application.Features.Products.Rules;
 using MediatR;
@@ -26,7 +26,7 @@ namespace HepsiBuradaApi.Application
 
             ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
 
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
         }
 
         private static IServiceCollection AddRulesFromAsssemblyContaining(this IServiceCollection services, Assembly assembly, Type type)
