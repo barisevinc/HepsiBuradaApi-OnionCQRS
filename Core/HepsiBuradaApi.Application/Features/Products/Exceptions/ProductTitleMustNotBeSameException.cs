@@ -1,4 +1,4 @@
-﻿using HepsiBuradaApi.Application.Exceptions;
+﻿using HepsiBuradaApi.Application.Bases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HepsiBuradaApi.Application.Features.Products.Exceptions
 {
-    public class ProductTitleMustNotBeSameException : BaseExceptions
+    public class ProductTitleMustNotBeSameException : BaseException
     {
         public ProductTitleMustNotBeSameException() : base("Ürün başlığı zaten var!")
         {
