@@ -6,7 +6,7 @@ using HepsiBuradaApi.Application.UnitOfWorks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using YoutubeApi.Domain.Entities;
+using HepsiBuradaApi.Domain.Entities;
 
 namespace YoutubeApi.Application.Features.Auth.Command.Register
 {
