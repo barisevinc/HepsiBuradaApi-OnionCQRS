@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using YoutubeApi.Domain.Entities;
+using HepsiBuradaApi.Domain.Entities;
 
 namespace HepsiBuradaApi.Application.Features.Auth.Rules
 {
