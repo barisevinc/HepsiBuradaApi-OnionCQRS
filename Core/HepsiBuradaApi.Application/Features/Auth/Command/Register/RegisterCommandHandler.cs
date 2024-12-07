@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using HepsiBuradaApi.Domain.Entities;
 
-namespace YoutubeApi.Application.Features.Auth.Command.Register
+namespace HepsiBuradaApi.Application.Features.Auth.Command.Register
 {
     public class RegisterCommandHandler : BaseHandler, IRequestHandler<RegisterCommandRequest, Unit>
     {
