@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Reflection;
+using HepsiBuradaApi.Domain.Entities;
 
 namespace HepsiBuradaApi.Persistence.Context
 {

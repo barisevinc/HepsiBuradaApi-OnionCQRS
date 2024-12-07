@@ -12,6 +12,7 @@ using HepsiBuradaApi.Persistence.Repositories;
 using HepsiBuradaApi.Application.UnitOfWorks;
 using HepsiBuradaApi.Persistence.UnitOfWorks;
 using HepsiBuradaApi.Domain.Entities;
+using HepsiBuradaApi.Domain.Entities;
 
 namespace HepsiBuradaApi.Persistence
 {
