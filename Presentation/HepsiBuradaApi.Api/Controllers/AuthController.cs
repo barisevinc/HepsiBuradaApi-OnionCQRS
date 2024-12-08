@@ -1,5 +1,8 @@
 ﻿using HepsiBuradaApi.Application.Features.Auth.Command.Login;
+using HepsiBuradaApi.Application.Features.Auth.Command.RefreshToken;
 using HepsiBuradaApi.Application.Features.Auth.Command.Register;
+using HepsiBuradaApi.Application.Features.Auth.Command.Revoke;
+using HepsiBuradaApi.Application.Features.Auth.Command.RevokeAll;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -31,5 +34,25 @@ namespace HepsiBuradaApi.Api.Controllers
             return StatusCode(StatusCodes.Status200OK, response);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> RefreshToken(RefreshTokenCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK, response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Revoke(RevokeCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RevokeAll()
+        {
+            var response = await mediator.Send(new RevokeAllCommandRequest());
+            return StatusCode(StatusCodes.Status200OK);
+        }
     }
 }
