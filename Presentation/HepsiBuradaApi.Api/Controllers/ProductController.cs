@@ -3,6 +3,7 @@ using HepsiBuradaApi.Application.Features.Products.Command.DeleteProduct;
 using HepsiBuradaApi.Application.Features.Products.Command.UpdateProduct;
 using HepsiBuradaApi.Application.Features.Products.Queries.GeAllProducts;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,7 @@ namespace HepsiBuradaApi.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllProducts()
         {
             var response = await _mediator.Send(new GetAllProductsQueryRequest());
