@@ -1,4 +1,6 @@
-﻿using HepsiBuradaApi.Application.Interfaces.Tokens;
+﻿using HepsiBuradaApi.Application.Interfaces.RedisCache;
+using HepsiBuradaApi.Application.Interfaces.Tokens;
+using HepsiBuradaApi.Infrastructure.RedisCache;
 using HepsiBuradaApi.Infrastructure.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +22,10 @@ namespace HepsiBuradaApi.Infrastructure
             services.Configure<TokenSettings>(configuration.GetSection("JWT"));
             services.AddTransient<ITokenService, TokenService>();
 
+            services.Configure<RedisCacheSettings>(configuration.GetSection("RedisCacheSettings"));
+            services.AddTransient<IRedisCacheService, RedisCacheService>();
+
+
             services.AddAuthentication(opt =>
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -39,6 +45,12 @@ namespace HepsiBuradaApi.Infrastructure
                     ClockSkew = TimeSpan.Zero
 
                 };
+            });
+
+            services.AddStackExchangeRedisCache(opt =>
+            {
+                opt.Configuration = configuration["RedisCacheSettings:ConnectionString"];
+                opt.InstanceName = configuration["RedisCacheSettings:InstanceName"];
             });
         }
     }
