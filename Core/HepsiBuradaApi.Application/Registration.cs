@@ -27,6 +27,7 @@ namespace HepsiBuradaApi.Application
             ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RedisCacheBehavior<,>));
         }
 
         private static IServiceCollection AddRulesFromAsssemblyContaining(this IServiceCollection services, Assembly assembly, Type type)
