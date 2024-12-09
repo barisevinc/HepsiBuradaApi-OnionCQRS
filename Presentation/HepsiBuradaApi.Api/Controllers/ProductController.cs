@@ -1,4 +1,6 @@
-﻿using HepsiBuradaApi.Application.Features.Products.Command.CreateProduct;
+﻿using HepsiBuradaApi.Application.Features.Brands.Commands.CreateBrand;
+using HepsiBuradaApi.Application.Features.Brands.Queries.GetAllBrands;
+using HepsiBuradaApi.Application.Features.Products.Command.CreateProduct;
 using HepsiBuradaApi.Application.Features.Products.Command.DeleteProduct;
 using HepsiBuradaApi.Application.Features.Products.Command.UpdateProduct;
 using HepsiBuradaApi.Application.Features.Products.Queries.GeAllProducts;
@@ -48,6 +50,21 @@ namespace HepsiBuradaApi.Api.Controllers
         {
             await _mediator.Send(request);
             return Ok();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateBrand(CreateBrandCommandRequest request)
+        {
+            await _mediator.Send(request);
+            return Ok();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllBrands()
+        {
+            var response = await _mediator.Send(new GetAllBrandsQueryRequest());
+
+            return Ok(response);
         }
 
     }
