@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using HepsiBuradaApi.Application.Bases;
+using HepsiBuradaApi.Application.Behaviors;
 using HepsiBuradaApi.Application.Beheviors;
 using HepsiBuradaApi.Application.Exceptions;
 using HepsiBuradaApi.Application.Features.Products.Rules;
